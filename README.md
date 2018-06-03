@@ -1,0 +1,15 @@
+# OptimalFenceHPCProject
+#Compile the omp file using 
+gcc -fopenmp OMPOptimalFence.c -o ompcompiled -lm  
+
+#Compile the MPI file using 
+mpicc MPIOptimalFence.c -o mpicompiled -lm  
+
+#Compile the hybrid file using 
+mpicc -fopenmp HybridOptimalFence.c -o hybridcompiled -lm  
+
+#Use the compiled file in the .sh file 
+#and do this in the cluster  
+qsub *.sh  
+
+Done
